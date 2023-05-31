@@ -1,0 +1,82 @@
+<div class="container">
+  <p-panel header="Uncommon Pipes" class="p-2">
+    <p>pipes included in angular - usually in the common module</p>
+  </p-panel>
+
+  <div class="grid">
+    <div class="col-12 md:col-6">
+
+      <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+        <div class="min-height">
+          <p class="m-3">
+            Hi! {{ name }}, es un placer {{ gender | i18nSelect:invitationMap }} a nuestro evento
+          </p>
+          <p-button (click)="changeClient()" label="Change Client">
+          </p-button>
+        </div>
+
+      </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+
+      <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+        <div class="min-height">
+          <p class="m-3">
+            Actualmente {{clients.length | i18nPlural:clientsMap}}
+          </p>
+          <p-button (click)="deleteClient()" label="Delete Client">
+          </p-button>
+        </div>
+
+      </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+
+      <p-fieldset legend="Slice Pipe" [toggleable]="true">
+        <div class="min-height">
+          <b>Original</b>
+          <pre>{{clients}}</pre>
+          <b>Slice 0:3</b>
+          <pre>{{clients | slice:0:3}}</pre>
+        </div>
+
+      </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+
+      <p-fieldset legend="Json Pipe" [toggleable]="true">
+        <div class="min-height">
+          <b>Original</b>
+          <pre>{{jsonData}}</pre>
+          <b>JSON pipe</b>
+          <pre>{{jsonData | json}}</pre>
+        </div>
+      </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+        <div class="min-height">
+          <b>Original</b>
+          <pre>{{jsonData}}</pre>
+          <b>JSON pipe</b>
+          <ul>
+            <li *ngFor="let item of jsonData | keyvalue">
+              <b>{{item.key | titlecase }}: </b>{{item.value}}
+            </li>
+          </ul>
+        </div>
+      </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="Async Pipe" [toggleable]="true">
+        <div class="min-height">
+          <b>Timer Observable</b>
+          <p class="m-0">
+            {{myObservableTimer | async }}
+          </p>
+        </div>
+      </p-fieldset>
+    </div>
+  </div>
+
+</div>

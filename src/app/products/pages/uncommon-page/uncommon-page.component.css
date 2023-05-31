@@ -1,0 +1,6 @@
+.min-height{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 12rem;
+}
